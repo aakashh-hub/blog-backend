@@ -3,7 +3,7 @@ const cors = require('cors');
 const blogRoutes = require('./routes/blogs');
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ origin: FE_URL }));
 app.use(express.json());
 
 app.use('/blogs', blogRoutes);

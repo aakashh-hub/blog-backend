@@ -1,9 +1,5 @@
-const { Sequelize, DataTypes } = require('sequelize');
-
-const sequelize = new Sequelize('blog', 'root', 'aakash', {
-  host: 'localhost',
-  dialect: 'mysql',
-});
+const { DataTypes } = require('sequelize');
+const sequelize = require('../config/db');
 
 const Blog = sequelize.define('Blog', {
   id: {
@@ -39,10 +35,6 @@ const Blog = sequelize.define('Blog', {
   tableName: 'blog',
   freezeTableName: true,
   timestamps: false,
-});
-
-sequelize.sync().then(() => {
-  console.log("Blogs table synced!");
 });
 
 module.exports = Blog;
